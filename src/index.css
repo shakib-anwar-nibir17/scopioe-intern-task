@@ -1,0 +1,19 @@
+/* DOCS */
+/* Html fontSize to 62.5% for easier use of rem units */
+/* input placeholder adjustment based on html font size change */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 62.5%;
+}
+
+input,
+input::-webkit-input-placeholder {
+  font-size: 1.6rem;
+}
+
