@@ -32,15 +32,16 @@ export const Button = React.forwardRef(
     return (
       <Comp
         className={cn(
-          'ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-base font-medium transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+          'ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-medium transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
           {
             'bg-primary text-white hover:scale-90': variant === 'primary',
             'bg-secondary text-white hover:scale-90': variant === 'secondary',
             'text-primary underline underline-offset-2': variant === 'link',
+            'hover:scale-90': variant === 'ghost',
           },
           {
             'w-[27rem] rounded-lg px-10 py-4': size === 'default',
-            '': size === 'link',
+            '': size === 'null',
           },
           className
         )}

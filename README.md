@@ -35,3 +35,11 @@
 - toaster for toast message
 - Sign Up page style complete
 
+### Style: Login Page Style Complete
+
+- yup for form validation
+- react hook form for form handling
+- Goggle and Facebook button component created
+- toaster for toast message
+- Login Page page style complete
+

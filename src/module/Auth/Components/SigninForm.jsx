@@ -8,14 +8,20 @@ import { Input } from '../../../Components/inputs/Input';
 import { Text } from '../../../Components/text/Text';
 
 const schema = yup.object().shape({
+  name: yup.string().required('Name is required'),
   email: yup.string().email('Invalid email').required('Email is required'),
   password: yup
     .string()
     .min(6, 'Password must be at least 6 characters')
     .required('Password is required'),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .required('Confirm Password is required'),
+  terms: yup.boolean().required('You must accept the Terms of Service'),
 });
 
-const LoginForm = () => {
+const SigninForm = () => {
   const {
     register,
     handleSubmit,
@@ -38,6 +44,14 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit, onError)}>
       <Input
+        id="name"
+        label="Name"
+        type="text"
+        placeholder="@username"
+        name="name"
+        {...register('name')}
+      />
+      <Input
         id="email"
         label="Email"
         type="email"
@@ -54,33 +68,32 @@ const LoginForm = () => {
         name="password"
         {...register('password')}
       />
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4 py-1">
-          <input
-            id="remember"
-            className="border-inputBorder h-4 w-4 rounded-sm border focus:outline-none"
-            type="checkbox"
-            {...register('remember')}
-          />
 
-          <Text>Remember Me</Text>
-        </div>
-        <div>
-          <Link>
-            <Button type="submit" className="pl-1" variant={'link'} size="null">
-              Forget Password?
-            </Button>
-          </Link>
-        </div>
+      <Input
+        id="confirm-password"
+        label="Confirm Password"
+        type="password"
+        placeholder="Re-type password"
+        name="confirmPassword"
+        {...register('confirmPassword')}
+      />
+      <div className="flex items-center gap-4 py-1">
+        <input
+          id="terms"
+          className="border-inputBorder h-4 w-4 rounded-sm border focus:outline-none"
+          type="checkbox"
+          {...register('terms')}
+        />
+
+        <Text className={`text-primary`}>Accept Terms of Service</Text>
       </div>
-
       <div className="mt-8 flex flex-col items-center">
-        <Button variant="secondary">Sign in</Button>
+        <Button>Sign Up</Button>
         <Text className="mt-4 flex items-center">
-          Don&apos;t Have an Account?
-          <Link to="/auth/signin">
+          Already Have an Account?{' '}
+          <Link to="/auth/login">
             <Button type="submit" className="pl-1" variant={'link'} size="null">
-              Create Account
+              Login
             </Button>
           </Link>
         </Text>
@@ -89,4 +102,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SigninForm;

@@ -1,5 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Container from '../../Components/Container/Container';
+import { SimplePagination } from '../../Components/pagination/simplePagination';
+import { Text } from '../../Components/text/Text';
 const AuthLayout = () => {
   const location = useLocation();
   console.log(location);
@@ -10,7 +12,19 @@ const AuthLayout = () => {
         <div className="h-full flex-1">
           <Outlet />
         </div>
-        <div className="h-full flex-1 rounded-2xl bg-[url('/authbackground.png')] bg-cover bg-center"></div>
+        <div className="relative flex h-full flex-1 items-center justify-center rounded-2xl bg-[url('/authbackground.png')] bg-cover bg-center">
+          <div className="flex h-[14.2rem] w-[34rem] flex-col items-center justify-center rounded-lg bg-[#152A16] opacity-70">
+            <div className="text-center">
+              <Text variant="bodyLarge" type="medium" className={`text-primary`}>
+                Create Account
+              </Text>
+              <Text variant="bodyLarge" type="medium" className={`text-white`}>
+                Fill your Information
+              </Text>
+            </div>
+            <SimplePagination location={location?.pathname} />
+          </div>
+        </div>
       </div>
     </Container>
   );
