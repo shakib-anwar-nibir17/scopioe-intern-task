@@ -13,6 +13,8 @@ export default {
     },
     extend: {
       colors: {
+        primary: '#4285F3',
+        secondary: '#156BCA',
         inputBorder: '#E7E7E7',
       },
       fontFamily: {

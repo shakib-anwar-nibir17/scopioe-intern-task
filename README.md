@@ -18,3 +18,20 @@
 - twMerge and clsx to combine css and conditionally apply tailwind css
 - useDeviceType hooks to determine the user device type
 
+### Style: Login Page
+
+- define and document input component
+- define and document Text component
+- define container
+- Auth Layout
+- Style Login Page
+- lucide react for icons for the project
+
+### Feat: Form validation and form handling
+
+- yup for form validation
+- react hook form for form handling
+- button component created
+- toaster for toast message
+- Sign Up page style complete
+

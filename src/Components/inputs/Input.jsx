@@ -51,8 +51,8 @@ export const Input = React.forwardRef(
     };
 
     return (
-      <div>
-        <Text type="medium" className={`mb-4`}>
+      <div className="mt-4">
+        <Text type="medium" className={`mb-2`}>
           {label}
         </Text>
         <div className="relative my-2">
@@ -63,7 +63,7 @@ export const Input = React.forwardRef(
             placeholder={placeholder}
             autoComplete="off"
             className={cn(
-              `h-[5.4rem] w-full rounded-lg border ${isFocused ? 'border-blue-500' : 'border-inputBorder'} pl-4 focus:outline-none`,
+              `h-[4.8rem] w-full rounded-lg border ${isFocused ? 'border-primary' : 'border-inputBorder'} pl-4 focus:outline-none`,
               className
             )}
             ref={inputRef}
