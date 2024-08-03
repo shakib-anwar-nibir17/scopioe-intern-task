@@ -12,16 +12,21 @@ export default {
       ...customSpacing,
     },
     extend: {
-      default: 'Poppins, sans-serif',
+      colors: {
+        inputBorder: '#E7E7E7',
+      },
+      fontFamily: {
+        default: ['Poppins', 'sans-serif'],
+      },
     },
     borderRadius: {
       '4xl': '2.4rem',
       '3xl': '2.0rem',
       '2xl': '1.6rem',
       xl: '1.2rem',
-      lg: '0.8rem',
-      md: '0.4rem',
-      sm: '0.2rem',
+      lg: '1.0rem',
+      md: '0.8rem',
+      sm: '0.4rem',
     },
   },
   plugins: [require('tailwindcss-animate')],
