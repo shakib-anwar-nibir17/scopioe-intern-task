@@ -4,8 +4,6 @@ export const getDeviceType = () => {
 
     if (width < 639) {
       return 'mobile';
-    } else if (width < 1280) {
-      return 'tablet';
     } else {
       return 'desktop';
     }

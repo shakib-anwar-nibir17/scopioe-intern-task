@@ -44,7 +44,7 @@ export const Text = ({ variant = 'bodyRegular', type = 'normal', children, class
           'text-xl': variant === 'titleMedium',
           'text-md': variant === 'titleSmall',
           'text-lg': variant === 'bodyLarge',
-          'text-sm sm:text-base': variant === 'bodyRegular',
+          'text-base': variant === 'bodyRegular',
           'text-sm': variant === 'sub',
         },
         {

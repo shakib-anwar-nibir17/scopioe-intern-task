@@ -51,7 +51,7 @@ export const Button = React.forwardRef(
       >
         {loading ? (
           <>
-            <div className="rounded-full flex h-4 w-4 animate-spin items-center justify-center">
+            <div className="flex h-4 w-4 animate-spin items-center justify-center rounded-full">
               <LucideLoader2 />
             </div>
             {children && <span>{children}</span>}
@@ -68,9 +68,9 @@ Button.displayName = 'Button';
 
 Button.propTypes = {
   className: PropTypes.string,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'link']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'ghost']),
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
-  size: PropTypes.oneOf(['default']),
+  size: PropTypes.oneOf(['default', 'null']),
   children: PropTypes.node,
 };

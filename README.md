@@ -43,3 +43,8 @@
 - toaster for toast message
 - Login Page page style complete
 
+### Style: Mobile Responsive Login Page
+
+- mobile responsive login page
+- dynamic import of login page
+

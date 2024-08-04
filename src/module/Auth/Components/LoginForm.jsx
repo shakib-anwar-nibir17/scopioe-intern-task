@@ -27,6 +27,7 @@ const LoginForm = () => {
   // Handle form submission
   const onSubmit = (data) => {
     console.log('Form Data:', data);
+    console.log(errors);
   };
 
   const onError = (errors) => {
@@ -58,7 +59,7 @@ const LoginForm = () => {
         <div className="flex items-center gap-4 py-1">
           <input
             id="remember"
-            className="border-inputBorder h-4 w-4 rounded-sm border focus:outline-none"
+            className="h-4 w-4 rounded-sm border border-inputBorder focus:outline-none"
             type="checkbox"
             {...register('remember')}
           />

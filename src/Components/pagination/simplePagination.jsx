@@ -5,11 +5,11 @@ export const SimplePagination = ({ location }) => {
   const page = 3; // Number of pages
 
   return (
-    <div className="absolute bottom-7 flex select-none items-center justify-center gap-5">
+    <div className="absolute bottom-24 flex select-none items-center justify-center gap-5 sm:bottom-7">
       <div className="flex items-center justify-center gap-2">
         {[...Array(page).keys()].map((item) => (
           <button
-            className={`rounded-full h-3 w-3 ${
+            className={`h-3 w-3 rounded-full ${
               location === '/auth/signin' && item === 0
                 ? 'bg-primary text-white'
                 : location === '/auth/login' && item === 1
